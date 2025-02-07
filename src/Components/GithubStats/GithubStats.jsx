@@ -4,25 +4,25 @@ const GithubStats = () => {
     return (
         <div>
             {/* git hub analytics */}
-            <p align="center" >
-                <h1 className='text-3xl font-bold text-violet-500 my-10 '>GitHub Analytics</h1>
-                <a href="https://github.com/neyaz14" className='flex flex-col md:flex-row flex-wrap items-stretch justify-stretch gap-5'>
-                    <img height="180em" src="https://github-readme-stats.vercel.app/api?username=neyaz14&show_icons=true&theme=radical" />
-                    <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=neyaz14&layout=compact&theme=radical" />
-                    <img height="180em" src="https://streak-stats.demolab.com/?user=neyaz14&theme=Radical" alt="GitHub Streak Stats" />
-                </a>
-            </p>
+            <div >
+                <p align="center" className='flex flex-col items-center justify-center mx-auto'>
+                    <h1 className='text-3xl font-bold text-violet-500 my-10 '>GitHub Analytics</h1>
+                    <a href="https://github.com/neyaz14" className='flex flex-col md:flex-row flex-wrap items-center justify-stretch gap-5 mx-auto'>
+                        <img height="180em" src="https://github-readme-stats.vercel.app/api?username=neyaz14&show_icons=true&theme=radical" className='mx-auto'/>
+                        <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=neyaz14&layout=compact&theme=radical" className='mx-auto'/>
+                        <img height="180em" src="https://streak-stats.demolab.com/?user=neyaz14&theme=Radical" alt="GitHub Streak Stats" className='mx-auto'/>
+                    </a>
+                </p>
+            </div>
 
-            <p align="center">
 
-            </p>
 
             <div align="center">
 
 
                 <h1 className='text-3xl font-bold text-violet-500 my-10 '>Things I have learnt and have a decent experience</h1>
 
-                <div className='flex mx-auto w-[850px] justify-between'>
+                <div className='lg:flex mx-auto lg:w-[850px] justify-between'>
                     <table className='w-[350px]'>
                         <tr className="border border-opacity-30 border-violet-300  py-5">
                             <td align="center" width="96" className="mx-10 p-5">

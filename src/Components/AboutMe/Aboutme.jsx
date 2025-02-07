@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import Me from "../../assets/carl.jpeg";
 import "../HeroSection/Hero.css";
 import GithubStats from "../GithubStats/GithubStats";
+import ProfilePic from "../../assets/profile-pic.png";
 const AboutMe = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center text-white bg-[#0a0a1a] p-6 md:p-10">
@@ -44,14 +45,14 @@ const AboutMe = () => {
           className="relative w-48 h-48 md:w-64 md:h-64 rounded-full border-4 border-purple-400 overflow-hidden shadow-lg"
         >
           <img
-            src={Me}
+            src={ProfilePic}
             alt="Profile"
             className="w-full h-full object-cover "
           />
         </motion.div>
       </div>
 
-     
+
 
 
       <GithubStats></GithubStats>
