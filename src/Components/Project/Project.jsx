@@ -76,7 +76,7 @@ const Project = () => {
 
             <div
                 ref={containerRef}
-                className="h-[269vh] w-full relative">
+                className="h-auto  w-full relative">
                 {cardData.map((card, index) => (
                     <StackCard
                         key={index}
@@ -120,21 +120,21 @@ const StackCard = ({ card, index, totalCards, scrollProgress }) => {
             }}
             className={`
         absolute mx-auto w-[85%] h-[20%] flex items-center justify-center
-        ${card.color} transition-all duration-100 bg-opacity-98
+        ${card.color} transition-all  duration-100 bg-opacity-98
         sticky overflow-hidden mb-6 rounded-2xl`}>
-            <div>
+            <div className='lg:flex hidden'>
                 <img src={card.img} alt="" className="w-[450px]" />
             </div>
             <div className="text-center text-white space-y-5 p-8 max-w-xl">
                 <h2 className="text-4xl font-bold mb-10">{card.title}</h2>
-                <p className="text-xl text-left">{card.description}</p>
+                <p className="text-xl md:text-left text-center">{card.description}</p>
                 <div className="flex  gap-2">
                     <Link to={card.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary text-white font-bold">GitHub</Link>
                     <Link to={card.link} target="_blank" rel="noopener noreferrer" className="btn btn-accent text-white font-bold">Live Demo</Link>
                 </div>
                 <div className=''>
                     <h1 className='text-xl text-white my-3 text-left'>Technology I used in this Poject :</h1>
-                    <div className='flex justify-start'>
+                    <div className='flex flex-wrap gap-3 justify-center md:justify-start'>
                         {card.technology.map(i => <button className={`btn w-auto text-left text-white btn-xm bg-gray-700-500 border-none mx-2 ${i === "React" ? "bg-blue-800" : i === "MongoDB" ? "bg-green-950" : i === "Node.Js" ? "bg-green-800" : i === "MongoDB" ? "bg-green-900" : i === "Express.Js" ? "bg-gray-800" : ""}`}>{i}</button>)}
                     </div>
 
