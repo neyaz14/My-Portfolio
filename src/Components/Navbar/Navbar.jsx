@@ -20,9 +20,9 @@ const Navbar = () => {
           </div>
           <div className="hidden lg:flex space-x-6">
             <Link to="#Hero" className="text-white hover:text-purple-400">Home</Link>
-            <Link to="/about" className="text-white hover:text-purple-400">About Me</Link>
-            <Link to="/projects" className="text-white hover:text-purple-400">Projects</Link>
-            <Link to="contact" className="text-white hover:text-purple-400">Contact</Link>
+            <Link to="#about" className="text-white hover:text-purple-400">About Me</Link>
+            <Link to="#projects" className="text-white hover:text-purple-400">Projects</Link>
+            <Link to="#contact" className="text-white hover:text-purple-400">Contact</Link>
           </div>
           <div className="lg:hidden flex items-center">
             <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
@@ -32,10 +32,10 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`lg:hidden ${isOpen ? "block" : "hidden"} bg-[#1e1e2f] p-4 space-y-2`}>
-        <Link to="/" className="block text-white hover:text-purple-400">Home</Link>
-        <Link to="/about" className="block text-white hover:text-purple-400">About Me</Link>
-        <Link to="/projects" className="block text-white hover:text-purple-400">Projects</Link>
-        <Link to="/contact" className="block text-white hover:text-purple-400">Contact</Link>
+        <Link to="#Hero" className="block text-white hover:text-purple-400">Home</Link>
+        <Link to="#about" className="block text-white hover:text-purple-400">About Me</Link>
+        <Link to="#projects" className="block text-white hover:text-purple-400">Projects</Link>
+        <Link to="#contact" className="block text-white hover:text-purple-400">Contact</Link>
       </div>
     </nav>
   );
