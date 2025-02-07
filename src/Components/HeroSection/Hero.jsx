@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import "./Hero.css";
 import Me from "../../assets/carl.jpeg";
 import ProfilePic1 from "../../assets/profile-pic1.png";
+import {Send, Instagram, Linkedin, Youtube, Github, FileUser, Twitter } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { GrResume } from 'react-icons/gr';
 
 
 const Hero = () => {
@@ -25,13 +28,43 @@ const Hero = () => {
                         <p className="text-base sm:text-lg">
                             Tech Innovator | Crafting Innovative, Functional, and User-Friendly Websites
                         </p>
-                        <div className="flex flex-col md:flex-row gap-8 md:justify-start mx-auto">
-                            <button className="btn md:mx-0 mx-auto w-28 btn-neon">Resume</button>
-                            <button className="btn btn-outline md:mx-0 mx-auto w-28 btn-neon">Contact</button>
+
+                        <div className="flex flex-col md:flex-row gap-8 justify-center items-center md:justify-start mx-auto">
+                            <Link
+                                to="https://www.linkedin.com/in/neyaz-morshid-0087a6317/"
+                                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-blue-900 transition"
+                            >
+                                <Linkedin className="mr-3" />
+                                LinkedIn
+                            </Link>
+                            <Link
+                                to="https://x.com/Neyaz0414"
+                                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-gray-950 transition"
+                            >
+                                <Twitter className="mr-3" />
+                                Twiter
+                            </Link>
+                            <Link
+                                to="https://github.com/neyaz14"
+                                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-green-900 transition"
+                            >
+                               <Github className='mr-3'/>
+                               Github
+                            </Link>
+
+                            <Link
+                                to="https://drive.google.com/drive/folders/1Nw2bN4138zpvaBXkLZWYCxwVzHkCFAJO?usp=sharing"
+                                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-red-900 transition"
+                            >
+                                <FileUser className='mr-3' />
+                                Resume
+                            </Link>
+
                         </div>
+
                         <div className="flex gap-2 flex-wrap justify-center md:justify-start mt-4">
                             {["React", "Javascript", "Express Js", "Node.js", "MongoDB"].map((tech, index) => (
-                                <span key={index} className="badge badge-outline px-6 py-4 bg-white bg-opacity-15 btn-neon text-sm ">{tech}</span>
+                                <span key={index} className="badge badge-outline px-6 py-4 bg-white bg-opacity-15 border-none items-center justify-center text-center text-sm ">{tech}</span>
                             ))}
                         </div>
                     </motion.div>

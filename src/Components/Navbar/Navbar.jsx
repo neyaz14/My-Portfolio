@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <h1 className="text-xl font-bold text-[#b399ff]">My Portfolio</h1>
+            <h1 className="text-xl font-bold text-[#b399ff]">Neyaz Morshid</h1>
           </div>
           <div className="hidden lg:flex space-x-6">
             <Link to="#Hero" className="text-white hover:text-purple-400">Home</Link>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Send, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Send, Linkedin, Instagram, Youtube, FileUser, Github, Twitter } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
@@ -22,10 +22,16 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      message: formData.message
+    };
+
     emailjs.send(
       'YOUR_SERVICE_ID',
       'YOUR_TEMPLATE_ID',
-      formData,
+      templateParams,
       'YOUR_PUBLIC_KEY'
     ).then(
       (response) => {
@@ -33,17 +39,19 @@ const Contact = () => {
         setFormData({ name: '', email: '', message: '' });
       },
       (error) => {
+        console.error('EmailJS Error:', error);
         setStatus('Failed to send message. Please try again.');
       }
     );
   };
 
+
   return (
     <div className="min-h-screen bg-[#0f0f1a] text-white  p-4">
-        <div className='text-center my-14'>
-            <h1 className='text-4xl font-bold text-violet-600 '>Contact with me </h1>
-            <p className='text-white'>Got a question ? send me a message , and I will get back to you soon</p>
-        </div>
+      <div className='text-center my-14'>
+        <h1 className='text-4xl font-bold text-violet-600 '>Contact with me </h1>
+        <p className='text-white'>Got a question ? send me a message , and I will get back to you soon</p>
+      </div>
       <div className=" flex flex-col md:flex-row md:w-[90%] mx-auto  gap-10">
         {/* Contact Form */}
         <div className="bg-[#1a1a2e] md:w-[50%]  mx-auto rounded-xl p-6 shadow-2xl">
@@ -104,30 +112,39 @@ const Contact = () => {
 
 
           {/* Social Connect */}
-          <div className="bg-[#1a1a2e] rounded-xl p-6 shadow-2xl">
-            <h3 className="text-2xl font-bold mb-4 text-purple-400">Connect With Me</h3>
-            <div className="space-y-4">
+          <div className="bg-[#1a1a2e] rounded-xl p-6 w-fit shadow-2xl">
+            <h3 className="text-2xl font-bold mb-4 text-center text-purple-400">Connect With Me</h3>
+            <div className="flex flex-col gap-5 items-center  mx-auto">
               <Link
-                to="https://linkedin.com"
-                className="flex items-center bg-[#252539] p-3 rounded-lg hover:bg-blue-900 transition"
+                to="https://www.linkedin.com/in/neyaz-morshid-0087a6317/"
+                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-blue-900 transition"
               >
                 <Linkedin className="mr-3" />
-                Let's Connect on LinkedIn
+                LinkedIn
               </Link>
               <Link
-                to="https://instagram.com"
-                className="flex items-center bg-[#252539] p-3 rounded-lg hover:bg-pink-900 transition"
+                to="https://x.com/Neyaz0414"
+                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-gray-950 transition"
               >
-                <Instagram className="mr-3" />
-                Instagram
+                <Twitter className="mr-3" />
+                Twiter
               </Link>
               <Link
-                to="https://youtube.com"
-                className="flex items-center bg-[#252539] p-3 rounded-lg hover:bg-red-900 transition"
+                to="https://github.com/neyaz14"
+                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-green-900 transition"
               >
-                <Youtube className="mr-3" />
-                YouTube
+                <Github className='mr-3' />
+                Github
               </Link>
+
+              <Link
+                to="https://drive.google.com/drive/folders/1Nw2bN4138zpvaBXkLZWYCxwVzHkCFAJO?usp=sharing"
+                className="flex w-32 justify-center items-center bg-[#252539] p-3 rounded-lg hover:bg-red-900 transition"
+              >
+                <FileUser className='mr-3' />
+                Resume
+              </Link>
+
             </div>
           </div>
         </div>
